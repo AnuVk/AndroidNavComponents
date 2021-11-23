@@ -1,51 +1,8 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
-android {
-    compileSdk 30
-
-    defaultConfig {
-        applicationId "com.vijayarunkumar.anupama.androidnavcomponents"
-        minSdk 21
-        targetSdk 30
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-
-    buildFeatures {
-        viewBinding true
-    }
-
-}
-
 dependencies {
-    api project(path: ':domain')
-    api project(path: ':data')
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$project.kotlinVersion"
-    implementation "androidx.core:core-ktx:$project.ktxCoreVersion"
-    implementation "androidx.appcompat:appcompat:$project.appcompatVersion"
-    implementation "com.google.android.material:material:$project.materialVersion"
-    implementation "androidx.constraintlayout:constraintlayout:$project.constraintLayoutVersion"
-    implementation "androidx.multidex:multidex:$project.multiDexVersion"
-
     implementation "com.squareup.retrofit2:retrofit:$project.retrofitVersion"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$project.retrofitVersion"
     implementation "io.reactivex.rxjava2:rxjava:$project.rxJavaVersion"
